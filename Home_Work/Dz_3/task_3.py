@@ -1,4 +1,3 @@
-
 def thesaurus(*args):
     dict = {}
     for name in args:
@@ -10,5 +9,4 @@ def thesaurus(*args):
     return dict
 
 
-thesaurus("Коля","Вова","Саня","Ваня","Валя","Клава")
-
+thesaurus("Коля", "Вова", "Саня", "Ваня", "Валя", "Клава")
