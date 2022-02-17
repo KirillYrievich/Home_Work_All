@@ -1,9 +1,8 @@
-
 import decimal as dc
 import requests
 
 
-def currency_rates(currency_code = "", url = 'http://www.cbr.ru/scripts/XML_daily.asp'):
+def currency_rates(currency_code="", url='http://www.cbr.ru/scripts/XML_daily.asp'):
     if not (currency_code and url):
         return None
     elif currency_code.isalpha() == False:
@@ -20,7 +19,7 @@ def currency_rates(currency_code = "", url = 'http://www.cbr.ru/scripts/XML_dail
     find_index_value = text.find("Value", find_index_currency_code)
 
     value_index_a = find_index_value + 6
-    value_index_b = text.find("</Value>",find_index_currency_code)
+    value_index_b = text.find("</Value>", find_index_currency_code)
 
     slise_value = text[value_index_a:value_index_b]
 
@@ -29,9 +28,7 @@ def currency_rates(currency_code = "", url = 'http://www.cbr.ru/scripts/XML_dail
     value = dc.Decimal(value)
     value = value.quantize(dc.Decimal("1.00"))
 
-
-
     return value
 
-print(currency_rates("usd"))
 
+print(currency_rates("usd"))
