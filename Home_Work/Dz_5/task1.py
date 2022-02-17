@@ -1,7 +1,5 @@
-
 def gen_func(n):
-    for i in range(1, n+1, 2):
-        yield i
+    return (n for n in range(1, n + 1, 2))
 
 
 odd_to_15 = gen_func(15)
