@@ -1,6 +1,5 @@
 import os
 
-
 if not os.path.isdir('my_project'):
     os.mkdir('my_project')
 
